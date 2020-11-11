@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget APP</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- javascript -->
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <section class="section-center">
+      <h3>Budget APP</h3>
+      <!-- status -->
+      <div class="status">
+        <div class="status-unit">
+          <h4>budget</h4>
+          <i class="fas fa-money-bill-wave"></i>
+          
+          <!-- budget form -->
+          <form class="budget-form">
+            <div class="budget-submit-container">
+              <input type="number" class="budget-input" id="budget-input" placeholder="Amount">
+              <button type="submit" class="budget-submit-btn">
+                <i class="fas fa-check-circle"></i>
+              </button>
+            </div>
+            <div class="budget-update-container">
+              <p>£<span id="budget-amount">0.00</span></p>
+              <button type="submit" class="budget-update-btn">
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="status-unit">
+          <h4>expense</h4>
+          <i class="fas fa-receipt"></i>
+          <p>£<span id="expense-total-amount">0.00</span></p>
+        </div>
+        <div class="status-unit">
+          <h4>balance</h4>
+          <i class="fas fa-wallet"></i>
+          <p>£<span id="balance-amount">0.00</span></p>
+        </div>
+      </div>
+
+      <!-- expense form -->
+      <form class="expense-form">
+        <p class="alert"></p>
+        
+        <div class="expense-form-container">
+          <div class="form-row">
+            <input type="text" class="expense-name" id="expense-name" placeholder="Expense Name">
+          </div>
+          <div class="form-row">
+            <input type="text" class="expense-amount" id="expense-amount" placeholder="Expense Amount">
+            <button type="submit" class="expense-submit-btn">add expense</button>
+          </div>
+        </div>
+      </form>
+      
+      <!-- list -->
+      <div class="expense-container">
+        <article class="list-item-title">
+          <p class="name">Name</p>
+          <p class="amount">Amount</p>
+          <p class="action">Action</p>
+        </article>
+        <div class="expense-list">
+          <!-- <article class="list-item">
+            <p class="name">-food shopping</p>
+            <p class="amount">8250.00</p>
+            <div class="btn-container">
+              <button type="button" class="edit-btn">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="delete-btn">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </article> -->
+        </div>
+        <!-- button -->
+        <button type="button" class="clear-btn">clear expenses</button>
+      </div>
+    </section>
+  </body>
+</html>
