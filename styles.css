@@ -47,7 +47,7 @@ Variables
   --ff-secondary: "Ubuntu", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
-  --radius: 0.5rem;
+  --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
@@ -68,7 +68,7 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
+  background: var(--clr-primary-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -112,6 +112,7 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -147,7 +148,7 @@ section
 .section-center {
   width: 90vw;
   padding: 2rem;
-  margin: 3rem auto 0;
+  margin: 3rem auto;
   max-width: 35rem;
   background: var(--clr-white);
   border-radius: var(--radius);
@@ -177,7 +178,7 @@ status
   width: 30%;
   padding: 0.5rem;
   background: var(--clr-grey-10);
-  border-radius: 0.25rem;
+  border-radius: var(--radius);
 }
 .status-unit:nth-child(2) {
   margin: 0 5%;
@@ -191,10 +192,13 @@ status
   margin-bottom: 0.25rem;
 }
 .status-unit p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.9rem;
   margin-bottom: 0;
   color: var(--clr-black);
+}
+.status-unit span {
+  font-size: 1.5rem;
 }
 
 /*
@@ -257,10 +261,10 @@ budget form
 .budget-form .budget-submit-container {
   display: flex;
 }
-.budget-form.show-budget-edit .budget-update-container {
+.budget-form.show-budget-update .budget-update-container {
   display: flex;
 }
-.budget-form.show-budget-edit .budget-submit-container {
+.budget-form.show-budget-update .budget-submit-container {
   display: none;
 }
 
@@ -332,7 +336,7 @@ alert
   align-items: center;
   text-align: center;
   font-size: 0.7rem;
-  border-radius: 0.25rem;
+  border-radius: var(--radius);
   letter-spacing: var(--spacing);
   text-transform: capitalize;
 }
@@ -455,12 +459,18 @@ responsive
   .section-center {
     width: 95vw;
     padding: 1rem 0.5rem;
-    margin-top: 1rem;
+    margin: 1rem auto;
   }
   .status-unit {
     width: 32%;
   }
   .status-unit:nth-child(2) {
     margin: 0 2%;
+  }
+  .status-unit p {
+    font-size: 0.6rem;
+  }
+  .status-unit span {
+    font-size: 1rem;
   }
 }
