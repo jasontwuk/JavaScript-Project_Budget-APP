@@ -18,6 +18,10 @@ const clearBtn = document.querySelector(".clear-btn");
 const expenseTotalAmount = document.getElementById("expense-total-amount");
 const balanceAmount = document.getElementById("balance-amount");
 
+const checkClearContainer = document.querySelector(".check-clear-container");
+const checkClearBtnYes = document.getElementById("check-clear-btn-yes");
+const checkClearBtnNo = document.getElementById("check-clear-btn-no");
+
 // *** edit option
 let editElementName, editElementAmount;
 let editFlag = false;
@@ -30,7 +34,11 @@ budgetUpdateBtn.addEventListener("click", budgetUpdate);
 
 expenseSubmitBtn.addEventListener("click", addItem);
 
-clearBtn.addEventListener("click", clearItems);
+clearBtn.addEventListener("click", showCheckClear);
+
+checkClearBtnYes.addEventListener("click", clearItems);
+
+checkClearBtnNo.addEventListener("click", hideCheckClear);
 
 window.addEventListener("DOMContentLoaded", initializeApp);
 
@@ -237,6 +245,7 @@ function clearItems() {
   clearExpenseInput();
   // !!! For when a user clicks edit budget btn, but without editting it. We want to show the unchanged budget value (.budget-update-container).
   showBudgetUpdate();
+  hideCheckClear();
 }
 
 // *** display alert
@@ -326,6 +335,14 @@ function displayBalance() {
   balanceAmount.textContent = balanceValue;
 }
 
+function showCheckClear() {
+  checkClearContainer.classList.add("show-check-clear");
+}
+
+function hideCheckClear() {
+  checkClearContainer.classList.remove("show-check-clear");
+}
+
 // ****** LOCAL STORAGE **********
 // *** localStorage API
 // *** setItem, use JSON.stringify() to save as strings
@@ -357,17 +374,17 @@ function checkLocalStorage(key) {
 }
 
 function editLocalStorage(key, value) {
-  console.log(value);
-  console.log(editId);
+  // console.log(value);
+  // console.log(editId);
   let storageItem = checkLocalStorage(key);
-  console.log(storageItem);
+  // console.log(storageItem);
   storageItem = storageItem.map((object) => {
     if (object.value.id === editId) {
       object.value = value;
     }
     return object;
   });
-  console.log(storageItem);
+  // console.log(storageItem);
   localStorage.setItem(key, JSON.stringify(storageItem));
 }
 

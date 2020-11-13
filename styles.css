@@ -447,6 +447,65 @@ expense container
 
 /*
 =============== 
+check clear button container
+===============
+*/
+.check-clear-container {
+  display: none;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 2rem;
+  flex-direction: column;
+}
+.check-clear-container.show-check-clear {
+  display: flex;
+}
+
+.check-clear-container p {
+  margin-bottom: 0.5rem;
+  color: var(--clr-white);
+}
+.check-clear-btns {
+  line-height: 0;
+}
+.check-clear-btns button {
+  border-color: transparent;
+  align-items: center;
+  padding: 0.25rem 3.2rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  content: var(--clr-primary-5);
+  transition: var(--transition);
+  font-size: 0.85rem;
+}
+.check-clear-btns button.danger {
+  background: var(--clr-red-light);
+}
+.check-clear-btns button.danger:hover {
+  background: var(--clr-red-dark);
+  color: var(--clr-white);
+}
+.check-clear-btns button.safe {
+  background: var(--clr-primary-8);
+}
+.check-clear-btns button.safe:hover {
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+}
+
+/*
+=============== 
 responsive
 ===============
 */
